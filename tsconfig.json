@@ -1,0 +1,26 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "rootDir": "../",
+    "module": "system",
+    "sourceMap": true,
+    "target": "es5",
+    "outFile": "bundles/auth-http.js",
+    "moduleResolution": "node",
+    "removeComments": true
+  },
+  "files": [
+    "core",
+    "app/IAuthConfig",
+    "app/AuthConfig",
+    "app/AuthHttp",
+    "typings/index"
+  ],
+  "exclude": [
+    "node_modules",
+    "typings/globals"
+  ]
+}

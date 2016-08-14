@@ -1,0 +1,59 @@
+{
+  "name": "auth-http",
+  "version": "1.0.0",
+  "description": "Helper library for handling HTTP requests with authorization header in Angular 2 apps",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "typings": "typings",
+    "uglifyjs": "uglifyjs",
+    "tslint": "tslint *.ts src/**/*.ts",
+    "lint": "npm run tslint",
+    "minify": "uglifyjs -o bundles/auth-http.min.js bundles/auth-http.js",
+    "prepublish": "npm run build",
+    "clean": "rimraf core.js *.js.map *.d.ts app/**/*.js app/**/*.js.map app/**/*.d.ts dist bundles",
+    "precompile": "typings install",
+    "compile": "npm run compile:bundle && npm run compile:cjs && npm run compile:es6",
+    "compile:bundle": "tsc",
+    "compile:cjs": "tsc -t ES5 --sourceMap --experimentalDecorators --emitDecoratorMetadata --moduleResolution node --declaration core.ts typings/index",
+    "compile:es6": "tsc -t ES6 --sourceMap --experimentalDecorators --emitDecoratorMetadata --moduleResolution node core.ts --outDir dist/es6",
+    "pretest": "npm run lint",
+    "test": "echo test ",
+    "prebuild": "npm run clean && npm run compile && npm run test",
+    "build": "npm run minify",
+    "postbuild": "echo Build Successful."
+  },
+  "keywords": [
+    "angular2",
+    "authentication"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carluccyo/auth-http.git"
+  },
+  "author": "Carlo Di Maio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carluccyo/auth-http/issues"
+  },
+  "homepage": "https://github.com/carluccyo/auth-http#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@angular/common": "2.0.0-rc.5",
+    "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/http": "2.0.0-rc.5",
+    "@angular/platform-browser": "2.0.0-rc.5",
+    "core-js": "^2.3.0",
+    "es6-shim": "^0.35.0",
+    "zone.js": "^0.6.12",
+    "tslint": "^3.8.1",
+    "uglify-js": "^2.6.2",
+    "rxjs": "5.0.0-beta.6",
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4"
+  }
+}
